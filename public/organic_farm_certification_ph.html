@@ -1,0 +1,234 @@
+
+<style>
+  .wrap { font-family: var(--font-sans); padding: 24px 20px 32px; max-width: 720px; margin: 0 auto; }
+  .hero { background: #2D6A4F; border-radius: 16px; padding: 28px 32px 24px; color: #fff; margin-bottom: 24px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+  .hero::after { content: ''; position: absolute; bottom: -60px; right: 60px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .hero-title { font-size: 22px; font-weight: 500; margin: 0 0 6px; }
+  .hero-sub { font-size: 14px; opacity: 0.8; margin: 0; }
+  .hero-tags { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .hero-tag { font-size: 12px; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 18px 20px; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .badge { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .badge-green { background: #E8F5EE; }
+  .badge-teal { background: #E1F5F1; }
+  .card-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin: 0; }
+  .card-subtitle { font-size: 12px; color: var(--color-text-secondary); margin: 2px 0 0; }
+
+  .steps { display: flex; flex-direction: column; gap: 10px; }
+  .step { display: flex; gap: 12px; align-items: flex-start; }
+  .step-num { width: 22px; height: 22px; border-radius: 50%; background: #2D6A4F; color: #fff; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 13px; color: var(--color-text-primary); line-height: 1.5; }
+  .step-note { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+
+  .full-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; }
+  .reqs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+  .req-item { background: var(--color-background-secondary); border-radius: 8px; padding: 12px; text-align: center; }
+  .req-icon { font-size: 18px; margin-bottom: 4px; }
+  .req-label { font-size: 12px; color: var(--color-text-secondary); line-height: 1.4; }
+
+  .cost-bar { background: var(--color-background-secondary); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; }
+  .cost-icon { font-size: 20px; }
+  .cost-text { flex: 1; }
+  .cost-label { font-size: 13px; color: var(--color-text-secondary); }
+  .cost-val { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .cost-vs { font-size: 12px; color: #2D6A4F; background: #E8F5EE; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .contact-item { background: var(--color-background-secondary); border-radius: 8px; padding: 12px; }
+  .contact-label { font-size: 11px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .contact-val { font-size: 13px; color: var(--color-text-primary); font-weight: 500; }
+  .contact-link { font-size: 12px; color: #2D6A4F; }
+
+  .section-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 4px 0 14px; }
+
+  @media (max-width: 520px) {
+    .two-col, .reqs-grid, .contact-grid { grid-template-columns: 1fr; }
+    .cost-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-title">🌿 Organic Farm Certification in the Philippines</p>
+    <p class="hero-sub">Governed by the Bureau of Agriculture and Fisheries Standards (BAFS) under the Department of Agriculture · RA 10068 & Organic Agriculture Act</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Philippine National Standard for Organic Agriculture (PNSOA)</span>
+      <span class="hero-tag">Two pathways available</span>
+      <span class="hero-tag">Annual renewal</span>
+    </div>
+  </div>
+
+  <!-- Two pathways -->
+  <p class="section-title">Two certification pathways</p>
+  <hr class="divider">
+  <div class="two-col">
+    <!-- TPC -->
+    <div class="card">
+      <div class="card-header">
+        <div class="badge badge-green" style="font-size:18px;">📋</div>
+        <div>
+          <p class="card-title">Third-Party Certification</p>
+          <p class="card-subtitle">For larger farms &amp; export markets</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-text">Choose an accredited certifying body</div>
+            <div class="step-note">e.g. Organic Certification Center of the Philippines (OCCP)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-text">Submit application</div>
+            <div class="step-note">Farm details, land records &amp; input history</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-text">Develop a Farm Organic Plan</div>
+            <div class="step-note">Outline all organic practices; commit to annual reporting</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-text">Conversion period</div>
+            <div class="step-note">2–3 years free of prohibited synthetic inputs</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <div class="step-text">Farm inspection</div>
+            <div class="step-note">Inspector verifies PNSOA compliance on-site</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div>
+            <div class="step-text">Certificate issued</div>
+            <div class="step-note">Valid 1 year · renewed annually</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PGS -->
+    <div class="card">
+      <div class="card-header">
+        <div class="badge badge-teal" style="font-size:18px;">🤝</div>
+        <div>
+          <p class="card-title">Participatory Guarantee System</p>
+          <p class="card-subtitle">Affordable alternative for smallholders</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-text">Form or join a PGS core group</div>
+            <div class="step-note">Minimum 5 farmer members required (RA 11511, 2020)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-text">Apply for BAFS group accreditation</div>
+            <div class="step-note">Group must certify under BAFS for PNSOA compliance</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-text">Peer review process</div>
+            <div class="step-note">Members verify each other's farming practices collectively</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-text">Certification granted</div>
+            <div class="step-note">Community-based quality assurance · annual renewal</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px;background:#E8F5EE;border-radius:8px;padding:10px 12px;">
+        <p style="font-size:12px;color:#1B4332;margin:0;">✔ Lower cost · ✔ Ideal for local markets · ✔ Recognized under RA 11511</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core requirements -->
+  <div class="full-card">
+    <p class="section-title">Key requirements for both pathways</p>
+    <div class="reqs-grid">
+      <div class="req-item">
+        <div class="req-icon">🚫</div>
+        <div class="req-label">No prohibited synthetic inputs (fertilizers, pesticides)</div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">📝</div>
+        <div class="req-label">Written Farm Plan &amp; Operations Manual</div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">📊</div>
+        <div class="req-label">Farm records: inputs, practices &amp; harvests</div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">🧪</div>
+        <div class="req-label">Soil testing to verify compliance</div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">♻️</div>
+        <div class="req-label">Approved methods: composting, crop rotation, bio-pest control</div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">🔄</div>
+        <div class="req-label">Annual renewal of certification</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cost comparison -->
+  <div class="cost-bar">
+    <div class="cost-icon">💰</div>
+    <div class="cost-text">
+      <div class="cost-label">Third-Party Certification annual cost</div>
+      <div class="cost-val">Up to ₱70,000/year</div>
+    </div>
+    <span class="cost-vs">PGS is significantly more affordable</span>
+  </div>
+
+  <!-- Contact/Resources -->
+  <p class="section-title">Where to start</p>
+  <hr class="divider">
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-label">Governing body</div>
+      <div class="contact-val">BAFS – Bureau of Agriculture &amp; Fisheries Standards</div>
+      <div class="contact-link">bafs.da.gov.ph</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Certifying body (TPC)</div>
+      <div class="contact-val">Organic Certification Center of the Philippines (OCCP)</div>
+      <div class="contact-link">occpphils.org</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Technical assistance</div>
+      <div class="contact-val">DA Regional Field Offices &amp; Local Government Units (LGUs)</div>
+      <div class="contact-link">For Farm Plan &amp; PGS group info</div>
+    </div>
+  </div>
+
+</div>

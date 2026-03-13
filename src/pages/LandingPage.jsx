@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, Eye, HandHeart } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 const LandingPage = () => {
+  const { currentUser } = useAuth();
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -21,10 +23,12 @@ const LandingPage = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/register" className="bg-ommro-green-600 hover:bg-ommro-green-500 text-white font-medium px-8 py-3 rounded-lg flex items-center justify-center transition-colors text-lg shadow-lg">
-              Join Our Movement
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            {!currentUser && (
+              <Link to="/register" className="bg-ommro-green-600 hover:bg-ommro-green-500 text-white font-medium px-8 py-3 rounded-lg flex items-center justify-center transition-colors text-lg shadow-lg">
+                Join Our Movement
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            )}
             <a href="#impact" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-medium px-8 py-3 rounded-lg flex items-center justify-center transition-colors text-lg">
               Explore Our Impact
             </a>
@@ -97,14 +101,22 @@ const LandingPage = () => {
       {/* Visual Placeholder for Interactive Map & Certification Pathway */}
       <section className="py-20 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold font-sans text-slate-900 mb-6">Explore Our Network</h2>
-          <div className="aspect-video bg-slate-100 rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center mb-10">
-            <span className="text-slate-500 font-medium">Interactive Map Integration Placeholder</span>
+          <h2 className="text-3xl font-bold font-sans text-slate-900 mb-6">Our Community in Action</h2>
+          <div className="aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-lg border border-slate-200 mb-10">
+            <img 
+              src="/ommro_group.jpg" 
+              alt="OMMRO Group" 
+              className="w-full h-full object-cover"
+            />
           </div>
           
           <h2 className="text-3xl font-bold font-sans text-slate-900 mb-6 mt-20">The Certification Pathway</h2>
-          <div className="h-48 bg-slate-100 rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center">
-            <span className="text-slate-500 font-medium">Certification Infographic Placeholder</span>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 mb-20">
+            <iframe 
+              src="/organic_farm_certification_ph.html" 
+              title="Certification Pathway Infographic"
+              className="w-full h-[800px] border-none"
+            />
           </div>
         </div>
       </section>
